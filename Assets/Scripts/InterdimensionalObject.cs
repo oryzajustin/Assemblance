@@ -12,21 +12,25 @@ public class InterdimensionalObject : MonoBehaviour
     public GameObject pixelModel;
     public GameObject meshModel;
 
-    public void UpdateCurrentDimension(Dimension newDimension)
+    private void Update()
     {
-        switch (newDimension)
+        Dimension newDimension = transform.position.x > 0 ? Dimension.two : Dimension.three;
+        if(newDimension != currentDimension)
         {
-            case Dimension.two:
-                pixelModel.SetActive(true);
-                meshModel.SetActive(false);
-                break;
-            case Dimension.three:
-                pixelModel.SetActive(false);
-                meshModel.SetActive(true);
-                break;
-            default:
-                break;
+            switch (newDimension)
+            {
+                case Dimension.two:
+                    pixelModel.SetActive(true);
+                    meshModel.SetActive(false);
+                    break;
+                case Dimension.three:
+                    pixelModel.SetActive(false);
+                    meshModel.SetActive(true);
+                    break;
+                default:
+                    break;
+            }
+            currentDimension = newDimension;
         }
-        currentDimension = newDimension;
     }
 }
