@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class DimensionalTrigger : MonoBehaviour
 {
-    public int Dimension;
+    [SerializeField] Dimension dimension;
 
     private void OnTriggerEnter(Collider other)
     {
         InterdimensionalObject hitObject = other.GetComponent<InterdimensionalObject>();
         if (hitObject != null)
         {
-            hitObject.UpdateCurrentDimension(Dimension);
+            hitObject.UpdateCurrentDimension(dimension);
         }
     }
 }
