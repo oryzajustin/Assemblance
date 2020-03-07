@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1415881910246577581}
   - component: {fileID: 778807987}
   - component: {fileID: 778807986}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6294712210393875938}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 3D Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7981208933836807633}
   - component: {fileID: 2547408244250657171}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Key_Sprite_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4921988418150695994}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 2D Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,6 +374,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Key3D
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188293470131658857, guid: 6812009bfd79d4c4ab6996784a5a9c1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6812009bfd79d4c4ab6996784a5a9c1b, type: 3}

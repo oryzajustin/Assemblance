@@ -12,7 +12,7 @@ public class PlayableCharacter : MonoBehaviourPun
 
     public Vector3 direction;
 
-    private float throwPower = 5f;
+    private float throwPower = 8f;
 
     private void Start()
     {
@@ -65,21 +65,7 @@ public class PlayableCharacter : MonoBehaviourPun
         itemRB.useGravity = true;
         itemRB.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
         //Vector3 direction = otherPlayerGORef.transform.position - this.transform.position;
-        itemRB.AddForce(this.direction * throwPower + Vector3.up * 10f, ForceMode.Impulse);
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if(Input.GetKeyDown(KeyCode.E) && itemSlot.childCount == 0 && other.GetComponent<HoldableItem>() != null)
-        {
-            other.transform.parent = itemSlot.transform;
-            other.transform.localPosition = Vector3.zero;
-            Rigidbody rb = other.GetComponent<Rigidbody>();
-            rb.Sleep();
-            rb.isKinematic = true;
-            rb.useGravity = false;
-            
-        }
+        itemRB.AddForce(this.direction * throwPower + Vector3.up * 2f, ForceMode.Impulse);
     }
 
     public void SetOtherPlayer(GameObject other)
