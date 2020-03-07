@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 7614337315487254334}
   - component: {fileID: -6722417641612885181}
   - component: {fileID: -6397581961299618830}
+  - component: {fileID: 4439433080773872136}
   m_Layer: 0
   m_Name: PlayerPlaceholder
   m_TagString: Untagged
@@ -140,7 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54349db50ced8467693488d163f11a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlot: {fileID: 1605591424911640814}
   walk_speed: 3
   turn_smooth_time: 0.1
   speed_smooth_time: 0.2
@@ -199,3 +199,17 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &4439433080773872136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7614337315487254331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86262b960a83664c96aae1843449eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSlot: {fileID: 1605591424911640814}
+  otherPlayerGORef: {fileID: 0}
