@@ -14,7 +14,9 @@ public class SpawnHandler : MonoBehaviour
         }
         else
         {
-            PhotonNetwork.Instantiate("PlayerSprite", spawnPoints[1].position, Quaternion.identity);
+            GameObject player = PhotonNetwork.Instantiate("PlayerSprite", spawnPoints[1].position, Quaternion.identity);
+            // readjust rotation
+            player.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + 90f, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         }
     }
 }

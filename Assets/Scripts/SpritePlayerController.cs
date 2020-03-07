@@ -50,6 +50,8 @@ public class SpritePlayerController : MonoBehaviourPun
 
         Vector3 move = transform.right * x + transform.up * y;
 
+        move = move.normalized;
+
         controller.Move(move * walk_speed * Time.deltaTime);
     }
 }
