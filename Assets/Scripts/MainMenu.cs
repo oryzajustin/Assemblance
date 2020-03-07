@@ -112,7 +112,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
             }
             else
             {
-                waiting_status_text.text = "Lobby full!";
+                waiting_status_text.text = "Found partner!";
                 Debug.Log("Lobby is full! Match is ready");
             }
         }
@@ -127,10 +127,10 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
         if(PhotonNetwork.CurrentRoom.PlayerCount == max_players)
         {
-            PhotonNetwork.CurrentRoom.IsOpen = false; // don't let any other players join
+            PhotonNetwork.CurrentRoom.IsOpen = false; // don't let any other players join and auto start
 
             Debug.Log("Match is ready and full");
-            waiting_status_text.text = PhotonNetwork.CurrentRoom.PlayerCount + " Players found!";
+            waiting_status_text.text = "Found partner!";
 
             StartMatch(); // start the game
         }
