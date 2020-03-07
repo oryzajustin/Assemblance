@@ -6,21 +6,31 @@ public class MasterCamera : MonoBehaviour {
 
     public GameObject FogLeft;
     public GameObject FogRight;
-    public GameObject FogParticles;
+    public ParticleSystem FogParticles;
 
     void Awake() {
-        SetFog("left");
+        SetFogSide("left");
     }
 
-    public void SetFog(string side)
+    public void SetFogSide(string side)
     {
         if (side == "left")
         {
-
+            FogLeft.SetActive(true);
+            FogRight.SetActive(false);
         }
         else
         {
-
+            FogLeft.SetActive(false);
+            FogRight.SetActive(true);
         }
+        FogParticles.Play();
+    }
+
+    public void RemoveFog()
+    {
+        FogLeft.SetActive(false);
+        FogRight.SetActive(false);
+        FogParticles.Stop();
     }
 }
