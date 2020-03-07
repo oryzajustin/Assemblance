@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviourPun
 {
     [SerializeField] float walk_speed;
     [SerializeField] float turn_smooth_time;
@@ -37,10 +37,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if ()
-        //{
+        if(photonView.IsMine)
+        {
             MovePlayer();
-        //}
+        }
     }
 
     private void MovePlayer()

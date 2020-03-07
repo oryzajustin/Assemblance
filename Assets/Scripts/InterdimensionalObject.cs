@@ -1,29 +1,28 @@
 ﻿using UnityEngine;
 
+public enum Dimension
+{
+    two,
+    three
+}
 public class InterdimensionalObject : MonoBehaviour
 {
-    private int currentDimension;
+    private Dimension currentDimension;
 
-    public GameObject model2;
-    public GameObject model3;
+    public GameObject pixelModel;
+    public GameObject meshModel;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        UpdateCurrentDimension(2);
-    }
-
-    public void UpdateCurrentDimension(int newDimension)
+    public void UpdateCurrentDimension(Dimension newDimension)
     {
         switch (newDimension)
         {
-            case 2:
-                model2.SetActive(true);
-                model3.SetActive(false);
+            case Dimension.two:
+                pixelModel.SetActive(true);
+                meshModel.SetActive(false);
                 break;
-            case 3:
-                model2.SetActive(false);
-                model3.SetActive(true);
+            case Dimension.three:
+                pixelModel.SetActive(false);
+                meshModel.SetActive(true);
                 break;
             default:
                 break;
