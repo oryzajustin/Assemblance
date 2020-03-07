@@ -149,7 +149,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
     public void StartMatch()
     {
         Debug.Log("Starting Match");
-        PhotonNetwork.LoadLevel("MainGame");
+        PhotonNetwork.LoadLevel("SampleScene");
     }
 
     #endregion
