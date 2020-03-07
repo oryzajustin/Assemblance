@@ -6,17 +6,28 @@ using Photon.Pun;
 public class SpawnHandler : MonoBehaviour
 {
     [SerializeField] Transform[] spawnPoints;
-    void Start()
+
+    private GameObject threeDPlayer;
+
+    private GameObject twoDPlayer;
+
+    void Awake()
     {
         if (PhotonNetwork.IsMasterClient) 
         {
-            PhotonNetwork.Instantiate("PlayerPlaceholder", spawnPoints[0].position, Quaternion.identity);
+            threeDPlayer = PhotonNetwork.Instantiate("PlayerPlaceholder", spawnPoints[0].position, Quaternion.identity);
         }
         else
         {
-            GameObject player = PhotonNetwork.Instantiate("PlayerSprite", spawnPoints[1].position, Quaternion.identity);
+            twoDPlayer = PhotonNetwork.Instantiate("PlayerSprite", spawnPoints[1].position, Quaternion.identity);
             // readjust rotation
-            player.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + 90f, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+            twoDPlayer.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + 90f, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         }
+    }
+
+    private void Start()
+    {
+        threeDPlayer.GetComponent<PlayableCharacter>().SetOtherPlayer(twoDPlayer);
+        twoDPlayer.GetComponent<PlayableCharacter>().SetOtherPlayer(threeDPlayer);
     }
 }
