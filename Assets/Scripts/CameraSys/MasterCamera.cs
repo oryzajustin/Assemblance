@@ -11,6 +11,11 @@ public class MasterCamera : MonoBehaviour {
     private GameObject localFog;
 
     void Start() {
+        fogInit();
+        enableFogForPlaneB();
+    }
+
+    public void fogInit() {
         localFog = Instantiate(fog, fog.transform.localPosition, Quaternion.Euler(0, 90f, 0)) as GameObject;
     }
 
