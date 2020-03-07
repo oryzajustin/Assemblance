@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &319823392
 Transform:
   m_ObjectHideFlags: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319823391}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6, y: 0, z: 0}
+  m_LocalScale: {x: 1.2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 770616344}
   m_RootOrder: 1
@@ -145,7 +145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &875832855
 Transform:
   m_ObjectHideFlags: 0
@@ -154,8 +154,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875832854}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6, y: 0, z: 0}
+  m_LocalScale: {x: 1.2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 770616344}
   m_RootOrder: 2
@@ -269,6 +269,8 @@ MonoBehaviour:
   FogLeft: {fileID: 875832854}
   FogRight: {fileID: 319823391}
   FogParticles: {fileID: 5112148488021036790}
+  FogEnabled: 0
+  AspectRatio: 2
 --- !u!114 &1111896169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,7 +478,27 @@ PrefabInstance:
     - target: {fileID: 3089422546327048979, guid: 2fad25faf5b028c61940574884d5d319,
         type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089422546327048979, guid: 2fad25faf5b028c61940574884d5d319,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089422546327048979, guid: 2fad25faf5b028c61940574884d5d319,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089422546327048979, guid: 2fad25faf5b028c61940574884d5d319,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089422546327048979, guid: 2fad25faf5b028c61940574884d5d319,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3089422546327048988, guid: 2fad25faf5b028c61940574884d5d319,
         type: 3}
@@ -486,12 +508,12 @@ PrefabInstance:
     - target: {fileID: 3089422546327048988, guid: 2fad25faf5b028c61940574884d5d319,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3089422546327048988, guid: 2fad25faf5b028c61940574884d5d319,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3089422546327048988, guid: 2fad25faf5b028c61940574884d5d319,
         type: 3}
