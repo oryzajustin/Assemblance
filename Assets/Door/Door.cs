@@ -18,4 +18,12 @@ public class Door : MonoBehaviourPunCallbacks
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Key key = other.GetComponent<Key>();
+        if (key != null)
+        {
+        }
+    }
 }
