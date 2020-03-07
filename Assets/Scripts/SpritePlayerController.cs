@@ -26,12 +26,16 @@ public class SpritePlayerController : MonoBehaviourPun
 
     private CharacterController controller;
 
+    private PlayableCharacter selfCharacter;
+
     // Start is called before the first frame update
     void Start()
     {
         //animator = this.GetComponent<Animator>();
         controller = this.GetComponent<CharacterController>();
         camera_transform = Camera.main.transform;
+
+        selfCharacter = this.GetComponent<PlayableCharacter>();
     }
 
     // Update is called once per frame
@@ -51,6 +55,11 @@ public class SpritePlayerController : MonoBehaviourPun
         Vector3 move = transform.right * x + transform.up * y;
 
         move = move.normalized;
+
+        if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        {
+            selfCharacter.direction = move;
+        }
 
         controller.Move(move * walk_speed * Time.deltaTime);
     }

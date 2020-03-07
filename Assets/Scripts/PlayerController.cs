@@ -26,12 +26,16 @@ public class PlayerController : MonoBehaviourPun
 
     private CharacterController controller;
 
+    private PlayableCharacter selfCharacter;
+
     // Start is called before the first frame update
     void Start()
     {
         //animator = this.GetComponent<Animator>();
         controller = this.GetComponent<CharacterController>();
         camera_transform = Camera.main.transform;
+
+        selfCharacter = this.GetComponent<PlayableCharacter>();
     }
 
     // Update is called once per frame
@@ -53,9 +57,10 @@ public class PlayerController : MonoBehaviourPun
             this.transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(this.transform.eulerAngles.y, target_rotation, ref turn_smooth_velocity, turn_smooth_time);
         }
 
+        selfCharacter.direction = transform.forward;
+
         float target_speed = walk_speed * input_direction.magnitude; // the speed we want to reach
         curr_speed = Mathf.SmoothDamp(curr_speed, target_speed, ref speed_smooth_velocity, speed_smooth_time); // damp to the target speed from our current speed
-
 
         Vector3 velocity = this.transform.forward * curr_speed;// + Vector3.up * velocity_y; // velocity
 
