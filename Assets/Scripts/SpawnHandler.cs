@@ -27,28 +27,30 @@ public class SpawnHandler : MonoBehaviour
 
     private void Start()
     {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        
 
-        PlayableCharacter player1 = null;
-        PlayableCharacter player2 = null;
+        //GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
-        foreach(GameObject player in players)
-        {
-            PlayableCharacter playerScript = player.GetComponent<PlayableCharacter>();
-            if(playerScript.dimension == Dimension.three)
-            {
-                player1 = playerScript;
-            }
-            else
-            {
-                player2 = playerScript;
-            }
-        }
-        if(player1 != null && player2 != null)
-        {
-            player1.SetOtherPlayer(player2.gameObject);
-            player2.SetOtherPlayer(player1.gameObject);
-        }
+        //PlayableCharacter player1 = null;
+        //PlayableCharacter player2 = null;
+
+        //foreach(GameObject player in players)
+        //{
+        //    PlayableCharacter playerScript = player.GetComponent<PlayableCharacter>();
+        //    if(playerScript.dimension == Dimension.three)
+        //    {
+        //        player1 = playerScript;
+        //    }
+        //    else
+        //    {
+        //        player2 = playerScript;
+        //    }
+        //}
+        //if(player1 != null && player2 != null)
+        //{
+        //    player1.SetOtherPlayer(player2.gameObject);
+        //    player2.SetOtherPlayer(player1.gameObject);
+        //}
 
     }
 }

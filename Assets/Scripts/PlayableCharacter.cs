@@ -1,12 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class PlayableCharacter : MonoBehaviour
+public class PlayableCharacter : MonoBehaviourPun
 {
     public Dimension dimension;
     [SerializeField] Transform itemSlot;
     [SerializeField] GameObject otherPlayerGORef;
+
+    private void Start()
+    {
+        Player thisPlayer = photonView.Owner;
+
+        thisPlayer.TagObject = this.gameObject;
+
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+        foreach (GameObject player in players)
+        {
+            PlayableCharacter playerScript = player.GetComponent<PlayableCharacter>();
+            if(playerScript != this)
+            {
+                playerScript.otherPlayerGORef = thisPlayer.TagObject as GameObject;
+            }
+        }
+    }
 
     // Update is called once per frame
     void Update()
