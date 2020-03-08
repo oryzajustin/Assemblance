@@ -45,6 +45,8 @@ GameObject:
   - component: {fileID: 8083661640641964183}
   - component: {fileID: 4381076033288158655}
   - component: {fileID: 5105232092288824060}
+  - component: {fileID: 5406010790520570914}
+  - component: {fileID: 4588257129338148541}
   m_Layer: 9
   m_Name: PlayerSprite
   m_TagString: Player
@@ -65,7 +67,7 @@ Transform:
   m_Children:
   - {fileID: 7177734365543024526}
   - {fileID: 334700278103789693}
-  - {fileID: 8780292162129759349}
+  - {fileID: 3381554668674101835}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -172,6 +174,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 4381076033288158655}
+  - {fileID: 4588257129338148541}
+  - {fileID: 1407416522154532175}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -207,6 +211,46 @@ MonoBehaviour:
   otherPlayerGORef: {fileID: 0}
   item: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
+--- !u!95 &5406010790520570914
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407416522154532171}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c9331e65454b30b41b6b338b70577190, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4588257129338148541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407416522154532171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: walk
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &6891740745120421017
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,22 +319,22 @@ PrefabInstance:
     - target: {fileID: 4962420971966528672, guid: f3f60bbc3b194124e8cc3c800fc2918c,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4962420971966528672, guid: f3f60bbc3b194124e8cc3c800fc2918c,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4962420971966528672, guid: f3f60bbc3b194124e8cc3c800fc2918c,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4962420971966528672, guid: f3f60bbc3b194124e8cc3c800fc2918c,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6283769690506804604, guid: f3f60bbc3b194124e8cc3c800fc2918c,
         type: 3}
@@ -374,7 +418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3f60bbc3b194124e8cc3c800fc2918c, type: 3}
---- !u!4 &8780292162129759349 stripped
+--- !u!4 &3381554668674101835 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6283769690506804604, guid: f3f60bbc3b194124e8cc3c800fc2918c,
     type: 3}
