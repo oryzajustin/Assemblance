@@ -1345,7 +1345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338016440}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 20, z: 0}
+  m_LocalPosition: {x: 0, y: 100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 663596870}
@@ -5701,6 +5701,11 @@ PrefabInstance:
         type: 3}
       propertyPath: AspectRatio
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794613986410440210, guid: ff3540abfe29f1074beb460e55179a55,
+        type: 3}
+      propertyPath: FogEnabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff3540abfe29f1074beb460e55179a55, type: 3}
