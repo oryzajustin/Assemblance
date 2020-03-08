@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 9032001726199281393}
   - component: {fileID: 3342960496702212616}
   - component: {fileID: 7621208669484973712}
+  - component: {fileID: 2310291028245090171}
+  - component: {fileID: 3681285101774946278}
   m_Layer: 0
   m_Name: Door1_3D
   m_TagString: Untagged
@@ -93,3 +95,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accompanyingKey: {fileID: 0}
+--- !u!65 &2310291028245090171
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915953339762441940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.000001, y: 0.89334166, z: 2.0000007}
+  m_Center: {x: 0, y: -0.14191863, z: 1.0000002}
+--- !u!65 &3681285101774946278
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915953339762441940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: -0.14191863, z: 1.0000002}

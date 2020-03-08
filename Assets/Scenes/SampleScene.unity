@@ -2057,6 +2057,7 @@ GameObject:
   - component: {fileID: 461705340}
   - component: {fileID: 461705339}
   - component: {fileID: 461705341}
+  - component: {fileID: 461705342}
   m_Layer: 0
   m_Name: Door1_XD_2D
   m_TagString: Untagged
@@ -2155,6 +2156,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accompanyingKey: {fileID: 537187652}
+--- !u!65 &461705342
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461705337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.24, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &498522683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3191,6 +3205,7 @@ GameObject:
   - component: {fileID: 648897036}
   - component: {fileID: 648897035}
   - component: {fileID: 648897034}
+  - component: {fileID: 648897037}
   m_Layer: 0
   m_Name: Door1_2d
   m_TagString: Untagged
@@ -3289,6 +3304,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &648897037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648897032}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.24, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &663596870 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 161353033412134733, guid: ff3540abfe29f1074beb460e55179a55,
@@ -7352,6 +7380,7 @@ GameObject:
   - component: {fileID: 1712138328}
   - component: {fileID: 1712138327}
   - component: {fileID: 1712138326}
+  - component: {fileID: 1712138329}
   m_Layer: 0
   m_Name: Door2_2d
   m_TagString: Untagged
@@ -7450,6 +7479,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1712138329
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712138324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.24, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1714433558
 GameObject:
   m_ObjectHideFlags: 0
@@ -8287,6 +8329,7 @@ GameObject:
   - component: {fileID: 2087403747}
   - component: {fileID: 2087403746}
   - component: {fileID: 2087403748}
+  - component: {fileID: 2087403749}
   m_Layer: 0
   m_Name: Final_Door_2d
   m_TagString: Untagged
@@ -8385,6 +8428,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accompanyingKey: {fileID: 825307343}
+--- !u!65 &2087403749
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087403744}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.24, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2133933214
 PrefabInstance:
   m_ObjectHideFlags: 0
