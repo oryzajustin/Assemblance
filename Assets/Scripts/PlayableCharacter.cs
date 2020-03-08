@@ -10,6 +10,8 @@ public class PlayableCharacter : MonoBehaviourPun
     [SerializeField] Transform itemSlot;
     [SerializeField] GameObject otherPlayerGORef;
 
+    [SerializeField] HoldableItem item;
+
     public Vector3 direction;
 
     private float throwPower = 8f;
@@ -44,7 +46,7 @@ public class PlayableCharacter : MonoBehaviourPun
                     HoldableItem heldItem = itemSlot.GetChild(0).GetComponent<HoldableItem>();
                     heldItem.transform.parent = null; // detatch object
                                                       //Yeet(otherPlayerGORef.transform.position, 10f, heldItem);
-                    Yeet(heldItem);
+                    YeetWrapper(heldItem);
                 }
             }
             if (Input.GetKeyDown(KeyCode.Q)) // drop item
@@ -57,15 +59,27 @@ public class PlayableCharacter : MonoBehaviourPun
         }
     }
 
-    private void Yeet(HoldableItem item)
+    public void YeetWrapper(HoldableItem item)
     {
-        item.transform.parent = null;
+        this.item = item;
+        if (PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("Yeet", RpcTarget.All);
+        }
+    }
+
+    [PunRPC]
+    private void Yeet()
+    {
+        this.item.transform.parent = null;
         Rigidbody itemRB = item.transform.GetComponent<Rigidbody>();
         itemRB.isKinematic = false;
         itemRB.useGravity = true;
         itemRB.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
         //Vector3 direction = otherPlayerGORef.transform.position - this.transform.position;
         itemRB.AddForce(this.direction * throwPower + Vector3.up * 2f, ForceMode.Impulse);
+
+        this.item = null;
     }
 
     public void SetOtherPlayer(GameObject other)

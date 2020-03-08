@@ -204,6 +204,7 @@ MonoBehaviour:
   dimension: 0
   itemSlot: {fileID: 7177734365543024526}
   otherPlayerGORef: {fileID: 0}
+  item: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
 --- !u!1 &6891740745120421017
 GameObject:
