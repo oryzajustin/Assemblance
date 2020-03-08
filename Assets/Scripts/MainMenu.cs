@@ -185,4 +185,9 @@ public class MainMenu : MonoBehaviourPunCallbacks
     //}
 
     #endregion
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
