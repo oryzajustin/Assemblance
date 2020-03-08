@@ -5,7 +5,6 @@ using Photon.Pun;
 
 public class DetectArea : MonoBehaviourPun
 {
-    [SerializeField] Transform itemSlot;
     [SerializeField] PlayableCharacter selfCharacter;
     private void OnTriggerStay(Collider other)
     {
