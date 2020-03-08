@@ -7,6 +7,8 @@ public class SpawnHandler : MonoBehaviour
 {
     [SerializeField] Transform[] spawnPoints;
 
+    [SerializeField] GameObject threeDCharPrefab;
+
     private GameObject threeDPlayer;
 
     private GameObject twoDPlayer;
@@ -15,7 +17,7 @@ public class SpawnHandler : MonoBehaviour
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            threeDPlayer = PhotonNetwork.Instantiate("PlayerPlaceholder", spawnPoints[0].position, Quaternion.identity);
+            threeDPlayer = PhotonNetwork.Instantiate(threeDCharPrefab.name, spawnPoints[0].position, Quaternion.identity);
             threeDPlayer.GetComponentInChildren<Beacon>().SetColour("red");
             Camera.main.transform.GetComponentInParent<MasterCamera>().SetFogSide("left");
         }

@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviourPun
     private float curr_speed;
 
     private float speed;
-    //private float animation_speed_percent;
-    //private Animator animator;
+    private float animation_speed_percent;
+    private Animator animator;
 
     //private float gravity = -12f;
     //private float velocity_y;
@@ -31,17 +31,18 @@ public class PlayerController : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        //animator = this.GetComponent<Animator>();
         controller = this.GetComponent<CharacterController>();
         camera_transform = Camera.main.transform;
 
         selfCharacter = this.GetComponent<PlayableCharacter>();
+
+        animator = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(photonView.IsMine)
+        if (photonView.IsMine)
         {
             MovePlayer();
         }
@@ -63,6 +64,9 @@ public class PlayerController : MonoBehaviourPun
         curr_speed = Mathf.SmoothDamp(curr_speed, target_speed, ref speed_smooth_velocity, speed_smooth_time); // damp to the target speed from our current speed
 
         Vector3 velocity = this.transform.forward * curr_speed;// + Vector3.up * velocity_y; // velocity
+
+        animation_speed_percent = input_direction.magnitude; // handles the animation speed percent
+        animator.SetFloat("speedPercent", animation_speed_percent, speed_smooth_time, Time.deltaTime); // dampen the animation to the target animation
 
         controller.Move(velocity * Time.deltaTime);
     }
