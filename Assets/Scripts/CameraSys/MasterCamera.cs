@@ -14,7 +14,6 @@ public class MasterCamera : MonoBehaviour {
     public float AspectRatio;
 
     void Awake() {
-        SetFogSide("left");
         UICompletePanel.SetActive(false);
         VanishPoofParticles?.Stop();
     }

@@ -25,10 +25,10 @@ public class SpawnHandler : MonoBehaviour
         {
             twoDPlayer = PhotonNetwork.Instantiate("PlayerSprite", spawnPoints[1].position, Quaternion.identity);
             twoDPlayer.GetComponentInChildren<Beacon>().SetColour("blue");
+            Camera.main.transform.GetComponentInParent<MasterCamera>().SetFogSide("right");
 
             // readjust rotation
             twoDPlayer.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + 90f, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-            Camera.main.transform.GetComponentInParent<MasterCamera>().SetFogSide("right");
         }
     }
 }
