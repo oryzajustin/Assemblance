@@ -5906,6 +5906,11 @@ PrefabInstance:
       propertyPath: UICompletePanel
       value: 
       objectReference: {fileID: 1012039985}
+    - target: {fileID: 5794613986410440210, guid: ff3540abfe29f1074beb460e55179a55,
+        type: 3}
+      propertyPath: FogEnabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff3540abfe29f1074beb460e55179a55, type: 3}
 --- !u!1 &1210438498

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class SpritePlayerController : MonoBehaviourPun
+public class SpritePlayerController : MonoBehaviourPun, IPunObservable
 {
     [SerializeField] float walk_speed;
     [SerializeField] float turn_smooth_time;
@@ -16,7 +16,8 @@ public class SpritePlayerController : MonoBehaviourPun
 
     private float speed;
     //private float animation_speed_percent;
-    //private Animator animator;
+    private Animator animator;
+    private SpriteRenderer spr;
 
     //private float gravity = -12f;
     //private float velocity_y;
@@ -34,6 +35,10 @@ public class SpritePlayerController : MonoBehaviourPun
         //animator = this.GetComponent<Animator>();
         controller = this.GetComponent<CharacterController>();
         camera_transform = Camera.main.transform;
+
+        spr = this.GetComponent<SpriteRenderer>();
+
+        animator = this.GetComponent<Animator>();
 
         selfCharacter = this.GetComponent<PlayableCharacter>();
     }
@@ -59,8 +64,34 @@ public class SpritePlayerController : MonoBehaviourPun
         if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
             selfCharacter.direction = move;
+            animator.SetBool("walk", true);
+        }
+        else
+        {
+            animator.SetBool("walk", false);
+        }
+
+        if(move.x > 0)
+        {
+            spr.flipX = false; // flip sprite
+        }
+        else if(move.x < 0)
+        {
+            spr.flipX = true;
         }
 
         controller.Move(move * walk_speed * Time.deltaTime);
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(spr.flipX);
+        }
+        else
+        {
+            spr.flipX = (bool)stream.ReceiveNext();
+        }
     }
 }
