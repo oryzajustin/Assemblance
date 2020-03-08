@@ -5005,39 +5005,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &912296674 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 161353033412134732, guid: ff3540abfe29f1074beb460e55179a55,
-    type: 3}
-  m_PrefabInstance: {fileID: 1111896166}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &912296675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912296674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c21e8b7a969164eb2e62135e44059c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Doors2D: {fileID: 946288901}
-  Doors3D: {fileID: 478528593}
-  FogManager: {fileID: 1111896167}
---- !u!114 &912296676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912296674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae0ef445020c242499899b08b57a9519, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &932026198
 GameObject:
   m_ObjectHideFlags: 0
@@ -5861,6 +5828,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 912296675, guid: ff3540abfe29f1074beb460e55179a55, type: 3}
+      propertyPath: Doors2D
+      value: 
+      objectReference: {fileID: 946288901}
+    - target: {fileID: 912296675, guid: ff3540abfe29f1074beb460e55179a55, type: 3}
+      propertyPath: Doors3D
+      value: 
+      objectReference: {fileID: 478528593}
     - target: {fileID: 161353033412134732, guid: ff3540abfe29f1074beb460e55179a55,
         type: 3}
       propertyPath: m_Name
@@ -5923,28 +5898,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5794613986410440210, guid: ff3540abfe29f1074beb460e55179a55,
         type: 3}
-      propertyPath: FogEnabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5794613986410440210, guid: ff3540abfe29f1074beb460e55179a55,
-        type: 3}
       propertyPath: UICompletePanel
       value: 
       objectReference: {fileID: 1012039985}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff3540abfe29f1074beb460e55179a55, type: 3}
---- !u!114 &1111896167 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5794613986410440210, guid: ff3540abfe29f1074beb460e55179a55,
-    type: 3}
-  m_PrefabInstance: {fileID: 1111896166}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912296674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d699e7ce9fd83d2668b8ce0642f9deea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1210438498
 GameObject:
   m_ObjectHideFlags: 0
