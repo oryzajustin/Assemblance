@@ -71,17 +71,6 @@ public class MasterCamera : MonoBehaviour {
             FogRight.SetActive(false);
             FogParticles.Stop();
         }
-        VanishPoofParticles?.Play();
-        StartCoroutine(DelayedCompleteUI());
-    }
-
-    IEnumerator DelayedCompleteUI()
-    {
-        //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(2);
         UICompletePanel.SetActive(true);
     }
 }
