@@ -7,12 +7,16 @@ public class MasterCamera : MonoBehaviour {
     public GameObject FogLeft;
     public GameObject FogRight;
     public ParticleSystem FogParticles;
+    public ParticleSystem VanishPoofParticles;
+    public GameObject UICompletePanel;
 
     public bool FogEnabled = false;
     public float AspectRatio;
 
     void Awake() {
         SetFogSide("left");
+        UICompletePanel.SetActive(false);
+        VanishPoofParticles?.Stop();
     }
 
     void Start()
@@ -41,6 +45,7 @@ public class MasterCamera : MonoBehaviour {
         }
     }
 
+    // enables the fog for the specified side
     public void SetFogSide(string side)
     {
         if (FogEnabled)
@@ -67,5 +72,7 @@ public class MasterCamera : MonoBehaviour {
             FogRight.SetActive(false);
             FogParticles.Stop();
         }
+        VanishPoofParticles?.Play();
+        UICompletePanel.SetActive(true);
     }
 }

@@ -125,7 +125,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 161353033412134733}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!20 &338016444
 Camera:
@@ -240,7 +240,7 @@ Transform:
   - {fileID: 319823392}
   - {fileID: 875832855}
   m_Father: {fileID: 161353033412134733}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &875832854
 GameObject:
@@ -346,6 +346,8 @@ GameObject:
   m_Component:
   - component: {fileID: 161353033412134733}
   - component: {fileID: 5794613986410440210}
+  - component: {fileID: 912296676}
+  - component: {fileID: 912296675}
   m_Layer: 0
   m_Name: Split Camera
   m_TagString: Untagged
@@ -364,6 +366,7 @@ Transform:
   m_LocalPosition: {x: 5.138704, y: 0.75007915, z: -0.5557661}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 6729959920091204921}
   - {fileID: 770616344}
   - {fileID: 338016441}
   m_Father: {fileID: 0}
@@ -384,8 +387,37 @@ MonoBehaviour:
   FogLeft: {fileID: 875832854}
   FogRight: {fileID: 319823391}
   FogParticles: {fileID: 5112148488021036790}
+  VanishPoofParticles: {fileID: 5827615856038727184}
+  UICompletePanel: {fileID: 0}
   FogEnabled: 1
   AspectRatio: 1.5
+--- !u!114 &912296676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161353033412134732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0ef445020c242499899b08b57a9519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &912296675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161353033412134732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c21e8b7a969164eb2e62135e44059c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Doors2D: {fileID: 0}
+  Doors3D: {fileID: 0}
+  FogManager: {fileID: 5794613986410440210}
 --- !u!1001 &757097060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -551,4 +583,85 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 5112148487402368146, guid: 9327d15d64537f1e98000868776fed49,
     type: 3}
   m_PrefabInstance: {fileID: 757097060}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3623821738118512349
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 161353033412134733}
+    m_Modifications:
+    - target: {fileID: 8011895251046462436, guid: e1fbb58a26f98234caa98535a48a94d8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011895251046462436, guid: e1fbb58a26f98234caa98535a48a94d8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011895251046462436, guid: e1fbb58a26f98234caa98535a48a94d8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011895251046462436, guid: e1fbb58a26f98234caa98535a48a94d8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011895251046462436, guid: e1fbb58a26f98234caa98535a48a94d8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011895251046462436, guid: e1fbb58a26f98234caa98535a48a94d8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011895251046462436, guid: e1fbb58a26f98234caa98535a48a94d8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011895251046462436, guid: e1fbb58a26f98234caa98535a48a94d8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011895251046462436, guid: e1fbb58a26f98234caa98535a48a94d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011895251046462436, guid: e1fbb58a26f98234caa98535a48a94d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011895251046462436, guid: e1fbb58a26f98234caa98535a48a94d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770045828387614826, guid: e1fbb58a26f98234caa98535a48a94d8,
+        type: 3}
+      propertyPath: m_Name
+      value: PoofCloud
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e1fbb58a26f98234caa98535a48a94d8, type: 3}
+--- !u!4 &6729959920091204921 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8011895251046462436, guid: e1fbb58a26f98234caa98535a48a94d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3623821738118512349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5827615856038727184 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7103794086300823757, guid: e1fbb58a26f98234caa98535a48a94d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3623821738118512349}
   m_PrefabAsset: {fileID: 0}
