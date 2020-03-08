@@ -9,6 +9,6 @@ public class DetectArea : MonoBehaviourPun
     [SerializeField] PlayableCharacter selfCharacter;
     private void OnTriggerStay(Collider other)
     {
-        selfCharacter.CheckPickUp();
+        selfCharacter.CheckPickUp(other);
     }
 }
