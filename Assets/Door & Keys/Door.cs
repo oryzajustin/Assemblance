@@ -10,7 +10,9 @@ public class Door : MonoBehaviourPun
     public GameObject accompanyingKey;
 
     [PunRPC] public void DestroyDoor() {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        accompanyingKey.transform.parent = null;
+        accompanyingKey.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
