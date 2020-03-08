@@ -71,7 +71,7 @@ public class PlayableCharacter : MonoBehaviourPun
     [PunRPC]
     private void Yeet()
     {
-        this.item.transform.parent = null;
+        //this.item.transform.parent = null;
         Rigidbody itemRB = item.transform.GetComponent<Rigidbody>();
         itemRB.isKinematic = false;
         itemRB.useGravity = true;
