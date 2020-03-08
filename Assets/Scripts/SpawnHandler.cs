@@ -13,7 +13,7 @@ public class SpawnHandler : MonoBehaviour
 
     void Awake()
     {
-        if (PhotonNetwork.IsMasterClient) 
+        if (PhotonNetwork.IsMasterClient)
         {
             threeDPlayer = PhotonNetwork.Instantiate("PlayerPlaceholder", spawnPoints[0].position, Quaternion.identity);
             threeDPlayer.GetComponentInChildren<Beacon>().SetColour("red");
