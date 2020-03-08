@@ -62,10 +62,7 @@ public class PlayableCharacter : MonoBehaviourPun
     public void YeetWrapper(HoldableItem item)
     {
         this.item = item;
-        if (PhotonNetwork.IsMasterClient)
-        {
-            photonView.RPC("Yeet", RpcTarget.All);
-        }
+        photonView.RPC("Yeet", RpcTarget.All);
     }
 
     [PunRPC]
@@ -82,10 +79,12 @@ public class PlayableCharacter : MonoBehaviourPun
         this.item = null;
     }
 
+    // Detects when you're over an item
     public void CheckPickUp(Collider other)
     {
         if (photonView.IsMine)
         {
+            // Picks it up if keypress
             if (Input.GetKeyDown(KeyCode.E) && itemSlot.childCount == 0 && other.GetComponent<HoldableItem>() != null)
             {
                 other.transform.parent = itemSlot.transform;
