@@ -309,8 +309,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8184719723604352863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 3323879903643908723}
   - {fileID: 3151888045333951760}
@@ -365,6 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BeaconRed: {fileID: 4468630987888369019}
   BeaconBlue: {fileID: 2736805591466855631}
+  Label: {fileID: 8184719723604352863}
 --- !u!1001 &315038127419751411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -372,6 +373,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6283769690506804604}
     m_Modifications:
+    - target: {fileID: 2424110528191379260, guid: 31463d428a3a931469b47637c35eca72,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5098113652433814725, guid: 31463d428a3a931469b47637c35eca72,
         type: 3}
       propertyPath: m_Name
