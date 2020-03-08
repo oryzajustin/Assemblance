@@ -263,5 +263,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18bc6c38bc94ff46ac581bf81fbf618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlot: {fileID: 7177734365543024526}
   selfCharacter: {fileID: 5105232092288824060}
