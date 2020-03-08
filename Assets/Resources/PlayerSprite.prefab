@@ -264,3 +264,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlot: {fileID: 7177734365543024526}
+  selfCharacter: {fileID: 5105232092288824060}
