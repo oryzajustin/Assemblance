@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlot: {fileID: 1605591424911640814}
+  selfCharacter: {fileID: 4439433080773872136}
 --- !u!65 &4735115882730691474
 BoxCollider:
   m_ObjectHideFlags: 0
