@@ -6,6 +6,14 @@ public class Beacon : MonoBehaviour
 {
     public ParticleSystem BeaconRed;
     public ParticleSystem BeaconBlue;
+    public GameObject Label;
+
+    void Awake()
+    {
+        BeaconRed.Stop();
+        BeaconBlue.Stop();
+        Label.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,5 +33,6 @@ public class Beacon : MonoBehaviour
             BeaconRed.Stop();
             BeaconBlue.Play();
         }
+        Label.SetActive(true);
     }
 }
