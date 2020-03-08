@@ -87,6 +87,8 @@ public class PlayableCharacter : MonoBehaviourPun
             // Picks it up if keypress
             if (Input.GetKeyDown(KeyCode.E) && itemSlot.childCount == 0 && other.GetComponent<HoldableItem>() != null)
             {
+                // transfer ownership and pick it up (we do this because by default all scene owned photonviews are owned by the master client)
+                other.GetComponent<HoldableItem>().photonView.TransferOwnership(photonView.Owner);
                 other.transform.parent = itemSlot.transform;
                 other.transform.localPosition = Vector3.zero;
                 Rigidbody rb = other.GetComponent<Rigidbody>();
