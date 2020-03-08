@@ -24,10 +24,7 @@ public class Door : MonoBehaviourPun
             if (key.AccompanyingDoor == this) {
                 Debug.Log("Key matches accompanying door");
                 // Match
-                //Destroy(gameObject);
-                if (PhotonNetwork.IsMasterClient) {
-                    photonView.RPC("DestroyDoor", RpcTarget.All);
-                }
+                photonView.RPC("DestroyDoor", RpcTarget.All);
             }
         }
     }
