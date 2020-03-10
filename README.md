@@ -3,7 +3,7 @@
 
 A 2 player online co-op game with a heavy emphasis on communication. Player's aren't able to see their own map, and must guide the other player to unlock doors and reach the end. Players exist in their own dimension - 2D or 3D - and are completely immersed in their own perspective. Keys are inter-dimensional objects that can be thrown between each player's dimension, and will transform to be 3D or 2D depending on the dimension it is in.
 
-## Winning game for Best Game for Mental Health
+## Winning game for Best Game for Mental Health Awareness
 
 The reason why we chose to do a game like this is because some of the methods to tackling 
 mental health are to provide a sense of community and have clear communication; it is especially important in our game,
