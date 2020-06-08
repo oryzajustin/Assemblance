@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Logic for unlocking doors
 public class DoorManager : MonoBehaviour
 {
     public GameObject Doors2D;
@@ -10,9 +11,9 @@ public class DoorManager : MonoBehaviour
 
     private List<GameObject> Doors;
 
-    // Start is called before the first frame update
     void Start()
     {
+        // Detects all the doors and saves them in list
         Doors = new List<GameObject>();
 
         Component[] tempDoors = Doors2D.GetComponentsInChildren<Door>();
@@ -30,9 +31,10 @@ public class DoorManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Checks if all the doors have unlocked. If so, end the level.
+
         bool doorExists = false;
 
         foreach (GameObject door in Doors)

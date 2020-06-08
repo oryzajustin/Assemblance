@@ -6,13 +6,10 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 
+// Handles matchmaking in the main menu.
+// It's a very rudimentary system, but works for what we're doing for now.
 public class MainMenu : MonoBehaviourPunCallbacks
 {
-    //[Header("Name Selection")]
-    //[SerializeField] GameObject name_panel;
-    //[SerializeField] TMP_InputField name_input_field;
-    //[SerializeField] Button name_continue_button;
-
     [Header("Networking Panels")]
     [SerializeField] GameObject find_players_panel;
     [SerializeField] GameObject waiting_panel;
@@ -25,20 +22,14 @@ public class MainMenu : MonoBehaviourPunCallbacks
     private const string game_version = "0.1";
     private const int max_players = 2;
 
-    //private const string player_prefs_key_name = "PlayerName";
-
     private void Awake()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        //SetUpInputField();
-        //name_input_field.onValueChanged.AddListener(delegate { SetPlayerName(name_input_field.text); });
         find_players_button.onClick.AddListener(delegate { FindPlayers(); });
-        //name_continue_button.onClick.AddListener(delegate { SavePlayerName(); });
         start_button.onClick.AddListener(delegate { StartMatch(); });
         start_button.gameObject.SetActive(false);
     }
@@ -77,7 +68,6 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
         waiting_panel.SetActive(false);
         find_players_panel.SetActive(true);
-        //waiting_status_text.text = PhotonNetwork.CurrentRoom.PlayerCount + " Players found!";
         Debug.Log($"Disconnected due to: {cause}");
     }
 
@@ -127,12 +117,12 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
         if(PhotonNetwork.CurrentRoom.PlayerCount == max_players)
         {
-            PhotonNetwork.CurrentRoom.IsOpen = false; // don't let any other players join and auto start
+            PhotonNetwork.CurrentRoom.IsOpen = false; // Don't let any other players join and auto start
 
             Debug.Log("Match is ready and full");
             waiting_status_text.text = "Found partner!";
 
-            StartMatch(); // start the game
+            StartMatch(); // Start the game
         }
         else
         {
@@ -151,38 +141,6 @@ public class MainMenu : MonoBehaviourPunCallbacks
         Debug.Log("Starting Match");
         PhotonNetwork.LoadLevel("SampleScene");
     }
-
-    #endregion
-
-    #region Name Input
-    //private void SetUpInputField()
-    //{
-    //    if (!PlayerPrefs.HasKey(player_prefs_key_name))
-    //    {
-    //        return;
-    //    }
-    //    string default_name = PlayerPrefs.GetString(player_prefs_key_name);
-    //    name_input_field.text = default_name;
-    //    SetPlayerName(default_name);
-    //}
-
-    //public void SetPlayerName(string name)
-    //{
-    //    Debug.Log(name);
-    //    name_continue_button.interactable = !string.IsNullOrEmpty(name);
-    //}
-
-    //public void SavePlayerName()
-    //{
-    //    string player_name = name_input_field.text;
-
-    //    PhotonNetwork.NickName = player_name;
-
-    //    PlayerPrefs.SetString(player_prefs_key_name, player_name);
-
-    //    name_panel.SetActive(false);
-    //    find_players_panel.SetActive(true);
-    //}
 
     #endregion
 

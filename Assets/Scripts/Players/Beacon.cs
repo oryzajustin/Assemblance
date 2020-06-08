@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Handles logic for the player beacon when they're behind the fog
 public class Beacon : MonoBehaviour
 {
     public ParticleSystem BeaconRed;
@@ -15,7 +16,6 @@ public class Beacon : MonoBehaviour
         Label.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.rotation = Quaternion.identity;

@@ -2,19 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// To be used for progressing through different levels/scenes if we elected to add more levels
+// Only handles ESC quitting for now...
 public class LevelManager : MonoBehaviour
 {
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.Escape))
         {
             Application.Quit();
         }
-    }
-
-    public void LevelRestart()
-    {
-        // Reload Level
     }
 }
